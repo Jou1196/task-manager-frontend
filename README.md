@@ -147,6 +147,17 @@ Proveer una interfaz moderna, simple y funcional para gestionar tareas de manera
 
 ---
 
+## 🔐 Variables de entorno
+
+Crear un archivo `.env` en la raíz del proyecto basado en `.env.example`:
+
+```bash
+cp .env.example .env
+
+Luego configurar:
+
+VITE_API_URL=http://localhost:8080/api/tasks
+
 # 👨‍💻 Autor
 
 Joseph Arias
