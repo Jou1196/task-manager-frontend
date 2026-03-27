@@ -1,73 +1,152 @@
-# React + TypeScript + Vite
+# 🎨 Task Manager Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend de la aplicación Task Manager desarrollado con React + TypeScript. Permite gestionar tareas consumiendo una API REST construida en Spring Boot.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 🚀 Tecnologías
 
-## React Compiler
+* React
+* TypeScript
+* Vite
+* Axios
+* CSS moderno
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# 🏗️ Arquitectura
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+El frontend está estructurado siguiendo separación por responsabilidades:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+components/
+services/
+types/
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🔹 Descripción
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* **components**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  * Contiene los componentes UI (TaskForm, TaskList)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* **services**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  * Maneja la comunicación con el backend mediante Axios
+
+* **types**
+
+  * Define los tipos TypeScript para mantener tipado fuerte
+
+---
+
+# 📁 Estructura del proyecto
+
+src/
+├── components/
+│   ├── TaskForm.tsx
+│   └── TaskList.tsx
+├── services/
+│   └── taskService.ts
+├── types/
+│   └── task.ts
+├── App.tsx
+├── main.tsx
+└── index.css
+
+---
+
+# ▶️ Instalación
+
+## 1. Clonar o entrar al proyecto
+
+cd task-manager-frontend
+
+## 2. Instalar dependencias
+
+npm install
+
+---
+
+# ▶️ Ejecución
+
+npm run dev
+
+Abrir en navegador:
+
+http://localhost:5173
+
+---
+
+# 🔌 Conexión con Backend
+
+El frontend consume la API en:
+
+http://localhost:8080/api/tasks
+
+Asegúrate de que el backend esté ejecutándose.
+
+---
+
+# ⚙️ Funcionalidades
+
+* Crear tareas
+* Listar tareas
+* Filtrar por estado
+* Cambiar estado
+* Eliminar tareas
+* Manejo de errores
+* Consumo de API con Axios
+* React Hooks (useState, useEffect)
+
+---
+
+# ⭐ Bonus implementados
+
+* Loader (indicador de carga)
+* Confirmación al eliminar
+* Paginación en frontend
+* UI mejorada con tarjetas
+* Estados y prioridades visuales
+
+---
+
+# 🧠 Flujo de la aplicación
+
+1. El usuario crea una tarea desde el formulario
+2. Se envía al backend mediante Axios
+3. La lista se actualiza automáticamente
+4. El usuario puede:
+
+   * filtrar tareas
+   * cambiar estado
+   * eliminar tareas
+
+---
+
+# 📌 Ejemplo de datos
+
+{
+"title": "Nueva tarea",
+"description": "Descripción de prueba",
+"status": "PENDING",
+"priority": "HIGH"
+}
+
+---
+
+# ⚠️ Consideraciones
+
+* El backend debe estar activo
+* Se usa CORS para permitir conexión
+* Los datos se obtienen vía REST
+
+---
+
+# 🎯 Objetivo
+
+Proveer una interfaz moderna, simple y funcional para gestionar tareas de manera eficiente.
+
+---
+
+# 👨‍💻 Autor
+
+Joseph Arias
