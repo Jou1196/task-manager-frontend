@@ -68,8 +68,8 @@ npm install
 
 # ▶️ Ejecución
 
-npm run dev
-abrir navegador
+* npm run dev
+* abrir navegador
 ---
 
 # 🔌 Conexión con Backend
