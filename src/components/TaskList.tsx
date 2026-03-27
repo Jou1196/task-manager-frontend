@@ -29,8 +29,8 @@ function TaskList({ refreshTrigger }: TaskListProps) {
       setTasks(response.content);
       setPageData(response);
     } catch (err) {
-      setError('Error al cargar tareas');
-    } finally {
+        setError(err instanceof Error ? err.message : 'Error al cargar tareas');
+    }finally {
       setLoading(false);
     }
   };
@@ -55,7 +55,7 @@ function TaskList({ refreshTrigger }: TaskListProps) {
       await updateTaskStatus(task.id, { status: nextStatus });
       await fetchTasks();
     } catch (err) {
-      setError('Error al actualizar el estado');
+     setError(err instanceof Error ? err.message : 'Error al actualizar el estado');
     } finally {
       setActionLoadingId(null);
     }
@@ -73,7 +73,7 @@ function TaskList({ refreshTrigger }: TaskListProps) {
       await deleteTask(id);
       await fetchTasks();
     } catch (err) {
-      setError('Error al eliminar la tarea');
+    setError(err instanceof Error ? err.message : 'Error al eliminar la tarea');
     } finally {
       setActionLoadingId(null);
     }

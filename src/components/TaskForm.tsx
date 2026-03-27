@@ -37,7 +37,7 @@ function TaskForm({ onTaskCreated }: TaskFormProps) {
 
       onTaskCreated();
     } catch (err) {
-      setError('Error al crear la tarea');
+        setError(err instanceof Error ? err.message : 'Error al crear la tarea');
     } finally {
       setLoading(false);
     }
