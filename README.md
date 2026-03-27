@@ -69,11 +69,7 @@ npm install
 # ▶️ Ejecución
 
 npm run dev
-
-Abrir en navegador:
-
-http://localhost:5173
-
+abrir navegador
 ---
 
 # 🔌 Conexión con Backend
